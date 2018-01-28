@@ -1,0 +1,5 @@
+乐淘的网址
+1. 完整版移动端  http://localhost:3000/mobile/
+2. 完整版PC端后台 http://localhost:3000/manage/
+3. 自写移动端  http://localhost:3000/m/
+4. 自写PC端后台 http://localhost:3000/admin/
