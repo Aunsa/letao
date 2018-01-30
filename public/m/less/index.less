@@ -1,0 +1,116 @@
+@import 'base.less';
+html,
+body {
+    height: 100%; // overflow: hidden;
+}
+
+.wrapper {
+    height: 100%;
+    .list {
+        background-color: #fff;
+        padding: 45px 0px 50px 0px;
+        #nav {
+            padding: 10px; //导航栏
+            .mui-row {
+                >div {
+                    >a {
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        #banner {
+            background-color: #fff;
+            padding: 0px 10px;
+            .mui-row {
+                >div {
+                       // 广告左边
+                    .mui-row {
+                        >a {
+                            display: block;
+                            width: 100%;
+                            >div {
+                                float: left;
+                                >img {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                     // 广告右边
+                    >a {
+                        >img {
+                            width: 100%;
+                        }
+                    }
+                }      
+            }
+        }
+        #product {
+            .brand-area {
+                padding: 0px 10px;
+                .title {
+                    margin-bottom: 10px;
+                    >a {
+                        >img {
+                            width: 100%;
+                        }
+                    }
+                }
+                .mui-row {
+                    >div {
+                        >a {
+                            >img {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+            .sport-area,.women-area,.man-area {
+                .title {
+                    padding: 0px 10px;
+                    >a {
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+                .mui-row {
+                    padding: 0px 10px;
+                    >div {
+                        padding: 5px 5px;
+                        .show {
+                            text-align: center;
+                            box-shadow: 0 0 5px #ccc;
+                            padding: 10px 0px;
+                            >a {
+                                >img {
+                                    width: 100%;
+                                }
+                            }
+                            .price {
+                                margin: 10px 0px;
+                                text-align: center;
+                                >span {
+                                    font-size: 12px;
+                                    color: #f30;
+                                }
+                                >del {
+                                    font-size: 12px;
+                                    color: #ccc;
+                                }
+                            }
+                            >button {
+                                background-color: #006699;
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}
