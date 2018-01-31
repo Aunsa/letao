@@ -1,15 +1,15 @@
 window.addEventListener('load',function(){
-    var letaoindex = new letaoIndex();
-    letaoindex.homeSlide();
-    letaoindex.scroll();
+    var letao = new Letao();
+    letao.homeSlide();
+    letao.scroll();
 })
 
 
-var letaoIndex = function () {
+var Letao = function () {
 
 }
 
-letaoIndex.prototype = {
+Letao.prototype = {
     // 首页轮播图初始化
     homeSlide:function () {
         //获得slider插件对象
