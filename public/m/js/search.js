@@ -45,8 +45,8 @@ Letao.prototype = {
 
             // 重新渲染到页面
             letao.selectHistory();
-            // 渲染后让输入框的文本为空
-            $('.text').val('');
+            //点击搜索的时候跳转到商品页面
+            window.location.href="product.html?search="+search;
         })
     },
     // 查询历史记录
