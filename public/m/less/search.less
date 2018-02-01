@@ -1,0 +1,56 @@
+@import 'base.less';
+
+#search {
+    >form {
+        margin-right: 60px;
+        margin-left:10px; 
+        >input {
+            padding: 0 10px;
+            margin-top: 54px;
+            border: solid 1px #006699;
+            text-align: left;
+            background: #fff;
+            height: 30px;
+            font-size: 12px;
+            margin-bottom: 0px;
+        }
+    }
+    >a {
+        position: absolute;
+        right: 12px;
+        top: 54px;
+        height: 30px;
+        background-color: #006699;
+        border: solid 1px #006699;
+    }
+    .search-history {
+        padding: 10px;
+        .search-history-title {
+            >span {
+                font-size: 12px;
+                color: #666;
+            }
+        }  
+        .search-history-body {
+            >ul {
+            	border-left: 1px solid #ccc;
+            	border-right: 1px solid #ccc;
+                >li {
+                    >a {
+                        padding-top: 5px;
+                        padding-bottom: 5px;
+                        font-size: 12px;
+                        color: #666;
+                        >.fa-close {
+                            float: right;
+                            margin-right: 10px;
+                        }
+                    }
+                    &.mui-table-view-cell:after{
+                    	left: 0px;
+                    }
+                }
+            }
+        }
+    }
+}
