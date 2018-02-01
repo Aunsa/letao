@@ -38,10 +38,11 @@
                     <!-- 搜索历史的列表 -->
                     <div class="search-history-body">
                         <ul class="mui-table-view">
-                            <li class="mui-table-view-cell">
-                                <!-- <a href="#">
-                                    鞋 <i class="fa fa-close"></i>
-                                    </a> -->
+                            <!-- <li class="mui-table-view-cell">
+                                <a href="#">
+                                    鞋 
+                                    <i class="fa fa-close"></i>
+                                </a> -->
                             </li>
                         </ul>
                     </div>
@@ -79,11 +80,11 @@
         <script type="text/html" id="historyData">
             {{each rows as value i}}
                 <li class="mui-table-view-cell">
-                    <a href="#" data-id={{value.id}}>
-                       {{value.search}}
+                    <a href="#" data-id="{{value.id}}">
+                        {{value.search}}
                         <i class="fa fa-close"></i>
                     </a>
-                </li>   
+                </li>
             {{/each}}
         </script>
         

@@ -4,7 +4,9 @@ var letao = null;
 window.addEventListener('load',function(){
     letao = new Letao();
     letao.addHistory();
-
+    letao.selectHistory();
+    letao.deleteHistory();
+    letao.clearHistory();
 })
 var Letao = function () {
 
@@ -17,7 +19,7 @@ Letao.prototype = {
             var search = $('.text').val();
             //获取本存储对象转换成JSON对象 如果没有给个空数组
             var historyData = JSON.parse(localStorage.getItem('historyData')||'[]');
-            console.log(historyData);
+            // console.log(historyData);
             // 如果没有内容提示输入
             if(!search){
                 alert('请输入搜索的物品');
@@ -42,8 +44,9 @@ Letao.prototype = {
             localStorage.setItem("historyData",JSON.stringify(historyData));
 
             // 重新渲染到页面
-            letao.selectHistory()
-
+            letao.selectHistory();
+            // 渲染后让输入框的文本为空
+            $('.text').val('');
         })
     },
     // 查询历史记录
@@ -56,7 +59,48 @@ Letao.prototype = {
         
         // 渲染到页面
         var html =  template('historyData',{'rows':historyData});
-        $('.search-history-body').html(html);
+        $('.search-history-body ul').html(html);
 
+    },
+
+    // 删除历史记录
+    deleteHistory:function(){
+       $('.mui-table-view').on('click','.fa-close',function(){
+        //   先获取要删除记录的id
+        var id = $(this).parent().data('id');
+        console.log(id);
+        // 获取所有历史记录
+        var historyData = JSON.parse(localStorage.getItem('historyData')||'[]') ;
+        console.log(historyData);
+
+        for(var i=historyData.length-1; i>=0; i--){
+            if(historyData[i].id==id){
+                historyData.splice(i,1);
+            }
+        }
+        // 删除完重新保存到本地存储
+        localStorage.setItem('historyData',JSON.stringify(historyData));
+        // 渲染到页面
+        letao.selectHistory()
+       })     
+    },
+    // 清空历史记录
+    clearHistory:function(){
+        $('.clear-history').on('click',function(){
+        // 自己的方法
+            // 获取所有历史记录
+            // var historyData = JSON.parse(localStorage.getItem('historyData')||'[]') ;
+            // 清空
+            // historyData = [];
+            // 删除完重新保存到本地存储
+            // localStorage.setItem('historyData',JSON.stringify(historyData));
+            // 渲染到页面
+
+            // 删除历史记录
+            localStorage.removeItem('historyData');
+            // 重新渲染页面
+            letao.selectHistory()
+        })
     }
+
 }
