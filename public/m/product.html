@@ -19,7 +19,7 @@
 <body>
     <!-- 头部区域 -->
     <header id="header">
-        <a href="#" class="fa fa-arrow-left"></a> 
+        <a href="index.html" class="fa fa-arrow-left"></a> 
         <span>我的乐淘商品列表页面</span> 
     </header>
    
@@ -43,34 +43,34 @@
                         <div class="mui-row">
                             <div class="mui-col-xs-3 active">
                                 <a href="#" data-sort="1" data-sort-type="time">
-                            上架时间
-                            <i class="fa fa-angle-down"></i>
-                        </a>
+                                    上架时间
+                                    <i class="fa fa-angle-down"></i>
+                                </a>
                             </div>
                             <div class="mui-col-xs-3">
                                 <a href="#" data-sort="1" data-sort-type="price">
-                            价格
-                            <i class="fa fa-angle-down"></i>
-                        </a>
+                                    价格
+                                    <i class="fa fa-angle-down"></i>
+                                </a>
                             </div>
                             <div class="mui-col-xs-3">
                                 <a href="#" data-sort="1" data-sort-type="num">
-                            数量
-                            <i class="fa fa-angle-down"></i>
-                        </a>
+                                    数量
+                                    <i class="fa fa-angle-down"></i>
+                                </a>
                             </div>
-                            <div class="mui-col-xs-3" >
+                            <div class="mui-col-xs-3">
                                 <a href="#" data-sort="1" data-sort-type="discount">
-                            折扣
-                            <i class="fa fa-angle-down"></i>
-                        </a>
+                                    折扣
+                                    <i class="fa fa-angle-down"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                     <!-- 商品列表的内容 -->
                     <div class="product-list-body">
                         <div class="mui-row">
-                            <div class="mui-col-xs-6 ">
+                            <!-- <div class="mui-col-xs-6 ">
                                 <div class="product">
                                     <a href="#" class="product-img">
                                         <img src="images/product.jpg" alt="">
@@ -90,7 +90,7 @@
                                         <button type="button" class="mui-btn mui-btn-primary ">立即购买</button>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div> 
                     </div>
                 </div>
@@ -100,7 +100,7 @@
     <!-- 底部区域 -->
     <footer id="footer">
         <div class="mui-row ">
-            <div class="mui-col-xs-3 active">
+            <div class="mui-col-xs-3">
                 <a href="index.html">
                     <i class="tab_home fa fa-home now"></i>
                     <span>首页</span>
@@ -129,25 +129,25 @@
 
     <!-- 创建商品列表的模板 -->
     <script type="text/html" id="product">
-        {{each}}
+        {{each data as value i}}
             <div class="mui-col-xs-6 ">
                 <div class="product">
-                    <a href="#" class="product-img">
-                        <img src="images/product.jpg" alt="">
+                    <a href="#" class="product-img" >
+                        <img src="{{value.pic[0].picAddr}}" alt="">
                     </a>
                     <div class="product-name">
-                        adidas阿迪达斯 男式 场下休闲篮球鞋S83700
+                        {{value.proName}}
                     </div>
                     <div class="product-price">
                         <span class="now-price">
-                            ¥560.00
+                            ¥{{value.price}}
                         </span>
                         <del class="old-price">
-                            ¥888.00
+                            ¥{{value.oldPrice}}
                         </del>
                     </div>
                     <div class="product-buy">
-                        <button type="button" class="mui-btn mui-btn-primary ">立即购买</button>
+                        <button type="button" class="mui-btn mui-btn-primary btn-buy" data-id="{{value.id}}">立即购买</button>
                     </div>
                 </div>
             </div>
