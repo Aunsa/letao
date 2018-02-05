@@ -30,9 +30,9 @@
             <!-- 轮播图的大容器 -->
             <div class="mui-slider">
                 <!-- 轮播图的图片容器 -->
-                <div class="mui-slider-group mui-slider-loop">
+                <!-- <div class="mui-slider-group mui-slider-loop"> -->
                 <!--支持循环，需要重复图片节点-->
-                <div class="mui-slider-item mui-slider-item-duplicate">
+                    <!-- <div class="mui-slider-item mui-slider-item-duplicate">
                         <a href="#"><img src="images/banner4.png" /></a>
                     </div>
                     <div class="mui-slider-item">
@@ -46,24 +46,20 @@
                     </div>
                     <div class="mui-slider-item">
                         <a href="#"><img src="images/banner4.png" /></a>
-                    </div>
+                    </div> -->
                 <!--支持循环，需要重复图片节点-->
-                 <div class="mui-slider-item mui-slider-item-duplicate">
+                    <!-- <div class="mui-slider-item mui-slider-item-duplicate">
                         <a href="#"><img src="images/banner1.png" /></a>
                     </div> -->
-                </div>
+                <!-- </div> -->
                 <!-- 轮播图的小圆点 和 图片容器在一起的 -->
-                 <div class="mui-slider-indicator">
-                    <div class="mui-indicator mui-active"></div>
-                    <div class="mui-indicator"></div>
-                    <div class="mui-indicator"></div>
-                    <div class="mui-indicator"></div>
-                </div>
-            </div>
+                <!-- <div class="mui-slider-indicator">
+                    <div class="mui-indicator "></div>
+                </div> -->
         </div>
         <!-- 商品的详情信息 -->
         <div class="product">
-            <div class="product-name">
+            <!-- <div class="product-name">
                 名称： 【莹恋】MIZUNO美津浓V1GA159002乒乓球鞋男鞋女鞋室内综合训练鞋
             </div>
             <div class="product-price">
@@ -95,31 +91,53 @@
             </div>
             <div class="product-num">
                 数量： <span class="btn-sub">-</span><input type="num" class="num-input"><span class="btn-add">+</span> 剩余： <span class="num">22</span>件
-            </div>
+            </div> -->
         </div>
     </main>
     <!-- 创建一个轮播图的模板 -->
     <script type="text/html" id="slideDetailTmp">
         <div class="mui-slider-group mui-slider-loop">
             {{each pic as value i}}
-            <div class="mui-slider-item">
-                <a href="#"><img src="{{value.picAddr}}" /></a>
-            </div>
+                <div class="mui-slider-item">
+                    <a href="#"><img src="{{value.picAddr}}" /></a>
+                </div>
             {{/each}}
-        </div>
+        </div>  
         <div class="mui-slider-indicator">
             {{each pic as value i}}
-            <div class="mui-indicator"></div>
+            <div class="mui-indicator "></div>
             {{/each}}
         </div>
     </script>
     <!-- 创建商品详情模板 -->
-   
+        <script type="text/html" id="productDetailTmp">
+                    <div class="product-name">
+                        名称：{{proName}}
+                    </div>
+                    <div class="product-price">
+                        价格：
+                        <span class="now-price">
+                            ¥{{price}}
+                        </span>
+                        <del class="old-price">
+                            ¥{{oldPrice}}
+                        </del>
+                    </div>
+                    <div class="product-size">
+                        尺码：
+                        {{each size as value i}}
+                        <span class="btn-size">{{value}}</span>
+                        {{/each}}
+                    </div>
+                    <div class="product-num">
+                        数量： <span class="btn-sub">-</span><input type="num" class="num-input" value="0"><span class="btn-add">+</span> 剩余： <span class="num">22</span>件
+                    </div>
+        </script>
     <!-- 底部区域 -->
     <footer id="footer">
-        <a href="#" class="fa fa-shopping-cart"></a>
-        <a href="#" class="mui-btn mui-btn-danger">加入购物车</a>
-        <a href="#" class="mui-btn mui-btn-warning">立即购买</a>
+        <a href="cart.html" class="fa fa-shopping-cart"></a>
+        <a href="javascript:;" class="mui-btn mui-btn-danger">加入购物车</a>
+        <a href="javascript:;" class="mui-btn mui-btn-warning">立即购买</a>
     </footer>
     <!-- 5. 引入mui的js -->
     <script src="lib/mui/js/mui.js"></script>

@@ -1,0 +1,94 @@
+@import 'base.less';
+body {
+    background-color: #fff;
+}
+
+
+/* 购物车主体 */
+
+#main {
+    padding: 45px 0px;
+    .mui-table-view-cell {
+        padding: 5px 10px;
+        .mui-media {
+            .mui-media-body {
+                font-size: 6.75px;
+                .product-name {
+                    //默认媒体的标题是不能换行的
+                    //white-space: nowrap;
+                    //设置成能换行的
+                    white-space: normal;
+                }
+                .product-price {
+                    .now-price {
+                        color: #f40;
+                        font-weight: 600;
+                    }
+                    .old-price {
+                        color: #ccc;
+                    }
+                }
+                .mui-pull-right {
+                    color: #888;
+                    margin-right: 12.5px;
+                }
+                .product-size {
+                    color: #888;
+                }
+                .product-options {
+                    position: absolute;
+                    left: 2.75px;
+                    bottom: 6.25px;
+                }
+            }
+        }
+    }
+}
+
+
+/* 订单区域 */
+
+#order {
+    position: fixed;
+    width: 100%;
+    bottom: 45px;
+    height: 54px;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    padding: 3.125px;
+    font-size: 6.75px;
+    line-height: 21px;
+    .mui-pull-left {
+        color: #f40;
+        font-weight: 600;
+        line-height: 40px;
+    }
+    .mui-pull-right {
+        margin-top :7px;
+    }
+
+}
+.mui-numbox{
+    width: 112px;
+}
+.mui-numbox [class*=numbox-btn], .mui-numbox [class*=btn-numbox]{
+    width: 40px;
+}
+/* 商品尺码的公共样式 */
+.product-size {
+    padding: 5px;
+    // border-bottom: 1px solid #ccc;
+    .btn-size {
+        width: 30px;
+        height: 30px;
+        border: 1px solid #ccc;
+        display: inline-block;
+        text-align: center;
+        line-height: 30px;
+        font-size: 14px;
+        margin-top: 10px;
+        &.active {
+            background-color: yellowgreen;
+        }
+    }
+}
